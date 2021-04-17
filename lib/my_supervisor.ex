@@ -1,4 +1,4 @@
-defmodule MySupervisor do
+defmodule P2P.MySupervisor do
     use GenServer
   
     ## API
