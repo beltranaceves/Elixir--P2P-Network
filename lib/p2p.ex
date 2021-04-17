@@ -1,4 +1,4 @@
-defmodule P2P do
+defmodule P2P.Node do
   @moduledoc """
   Documentation for `P2P`.
   """
@@ -15,12 +15,10 @@ defmodule P2P do
   def controller(state) do
     receive do
       {:exit_me} ->
-        IO.puts "Hola que tal"
         controller(state)
 
       {:stop} ->
         :discovery_server |> GenServer.call({:unregister_me, self()})
-        IO.puts "Aaaa dormir"
         exit(:normal)
     end
   end
